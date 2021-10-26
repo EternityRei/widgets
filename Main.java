@@ -20,29 +20,26 @@ public class Main extends Application{
     public void start(Stage window) throws Exception {
         window.setTitle("Widgets"); //programme name
 
-        Label label1 = new Label("Welcome to the widgets programme"); //text on the scene
-        Button button1 = new Button("Go to the widgets");
-        button1.setOnAction(e -> window.setScene(scene2));
+        Label welcoming_label = new Label("Welcome to the widgets programme"); //text on the scene
+        Button button_start = new Button("Start");
+        button_start.setOnAction(e -> window.setScene(scene_widgets));
 
-        //Layout 1 - children and laid out in vertical column
-        VBox layout1 = new VBox(20); //distance from label1 to button2
-        layout1.getChildren().addAll(label1, button1);
-        scene1 = new Scene(layout1, 300, 250);
+        //Layout 1 - children and laid out in the center
+        VBox layout1st = new VBox(20);
+        layout1st.getChildren().addAll(welcoming_label, button_start);
+        layout1st.setAlignment(Pos.CENTER);
+        scene_begin = new Scene(layout1st, 800, 500);
 
-        //button3
-        Button button2 = new Button("Select");
-        button2.setOnAction(e -> window.setScene(scene1));
+        //button_widgets
+        Button button_widgets = new Button("Select");
+        button_widgets.setOnAction(e -> window.setScene(scene_begin));
 
         //Layout 2
-        StackPane layout2 = new StackPane(); //just "background"
-        layout2.getChildren().add(button2); //show objects on bg
-        scene2 = new Scene(layout2, 300, 250);
-
-        window.setScene(scene1); //choose the start scene
-
-        Button button4 = new Button("Choose");
-        button4.setOnAction((e -> AlertBox.display("Widgets to show", "Choose your widget")));
-
+        StackPane layout2nd = new StackPane(); //just "background"
+        layout2nd.getChildren().add(button_widgets); //show objects on bg
+        layout2nd.setAlignment(Pos.BOTTOM_CENTER);
+        scene_widgets = new Scene(layout2nd, 800, 500);
+	    
         window.show();
     }
 
