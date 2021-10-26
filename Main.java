@@ -25,7 +25,7 @@ public class Main extends Application{
         button1.setOnAction(e -> window.setScene(scene2));
 
         //Layout 1 - children and laid out in vertical column
-        StackPane layout1 = new StackPane(); //distance from label1 to button2
+        VBox layout1 = new VBox(20); //distance from label1 to button2
         layout1.getChildren().addAll(label1, button1);
         scene1 = new Scene(layout1, 300, 250);
 
